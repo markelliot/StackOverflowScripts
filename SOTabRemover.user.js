@@ -20,7 +20,7 @@ with_jquery(function($){
 
 	$(function(){
 		$('ul#wmd-button-row li:last')
-			.before('<li class="wmd-button" id="fix-tabs" style="left: 400px; font-family: monospace; padding-top: 3px; font-size: 11px; hover:">\\t</li>')
+			.before('<li class="wmd-button" id="fix-tabs" style="left: 400px; font-family: monospace; padding-top: 3px; font-size: 11px;">\\t</li>')
 			.before('<li class="wmd-spacer" style="left: 375px;"></li>');
 
 		$('li#fix-tabs').click(function(){
