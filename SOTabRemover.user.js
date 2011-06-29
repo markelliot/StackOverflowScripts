@@ -11,17 +11,16 @@
 // This work is licensed under the Creative Commons Attribution 3.0 Unported License. 
 // To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/.
 
-function with_jquery(f) {
+function inject(f) {
     var script = document.createElement("script");
     script.type = "text/javascript";
     script.textContent = "(" + f.toString() + ")(jQuery)";
     document.body.appendChild(script);
 };
 	
-with_jquery(function($){
+inject(function($){
 
-	$(window).load(function(){
-
+	$(document).ready(function(){
 		$('ul#wmd-button-row li:last')
 			.before('<li class="wmd-button" id="fix-tabs" style="left: 400px; font-family: monospace; padding-top: 3px; font-size: 11px;">\\t</li>')
 			.before('<li class="wmd-spacer" style="left: 375px;"></li>');
@@ -29,7 +28,6 @@ with_jquery(function($){
 		$('li#fix-tabs').click(function(){
 			$('textarea#wmd-input.processed').val($('textarea#wmd-input.processed').text().replace(/\t/g, '    '));
 		});
-		
 	});
-	
+
 });
